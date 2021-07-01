@@ -1,0 +1,26 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "name": "Throwback Zone Made",
+      "slug": "throwback-zone-made",
+      "venue": "Horizon Club",
+      "address": "966 Lexington Ave New York",
+      "date": "June 11, 2021",
+      "time": "7:00 PM EST",
+      "description": "It's looking more and more like we will be seeing events return in the summer",
+      "image": "/images/sample/event1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Matrix Extended Trilogy",
+      "slug": "matrix-extended-trilogy",
+      "venue": "Chocoloco",
+      "address": "53 Next Value California",
+      "date": "September 21, 2021",
+      "time": "9:00 PM EST",
+      "description": "To celebrate this we are arranginga festival experience to say goodbye to lock down!",
+      "image": "/images/sample/event2.jpg"
+    }
+  ]
+}
