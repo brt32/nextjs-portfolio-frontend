@@ -4,7 +4,7 @@ const Showcase = () => {
   return (
     <div className={styles.showcase}>
       <h1>Welcome To brt32 Portfolio!</h1>
-      <h2>Find my already done and upcoming portfolios...</h2>
+      <h2>Find my upcoming and already done projects...</h2>
     </div>
   );
 };

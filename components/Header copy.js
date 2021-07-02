@@ -4,19 +4,22 @@ import styles from "@/styles/Header.module.css";
 
 const Header = () => {
   return (
-    <nav className={styles.nav}>
-      <div className={styles.container}>
-        <h1 className={styles.logo}>
-          <Link href="/">
-            <a>brt32 Portfolio</a>
-          </Link>
-        </h1>
-        <Search />
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <Link href="/">
+          <a>brt32 Portfolios</a>
+        </Link>
+      </div>
+      <Search />
+      <nav>
         <ul>
           <li>
             <Link href="/events">
-              <a>Projects</a>
+              <a>All Projects</a>
             </Link>
+          </li>
+          <li>
+            <a>|</a>
           </li>
           <li>
             <Link href="/blog">
@@ -24,9 +27,15 @@ const Header = () => {
             </Link>
           </li>
           <li>
+            <a>|</a>
+          </li>
+          <li>
             <Link href="/github">
               <a>Github</a>
             </Link>
+          </li>
+          <li>
+            <a>|</a>
           </li>
           <li>
             <Link href="/about">
@@ -34,13 +43,16 @@ const Header = () => {
             </Link>
           </li>
           <li>
+            <a>|</a>
+          </li>
+          <li>
             <Link href="/contactme">
-              <a>Contact</a>
+              <a>Contact Me</a>
             </Link>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

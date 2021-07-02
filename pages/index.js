@@ -1,24 +1,27 @@
 import Layout from "@/components/Layout";
 import EventItem from "@/components/EventItem";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { API_URL } from "@/config/index";
 
 export default function HomePage({ events }) {
   return (
-    <Layout>
-      <h1>Upcoming Projects</h1>
-      {events.length === 0 && <h3>No projects to show...</h3>}
+    <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
+      <Layout>
+        <h1>Upcoming Projects</h1>
+        {events.length === 0 && <h3>No projects to show...</h3>}
 
-      {events.map((evt) => (
-        <EventItem key={evt.id} evt={evt} />
-      ))}
+        {events.map((evt) => (
+          <EventItem key={evt.id} evt={evt} />
+        ))}
 
-      {events.length > 0 && (
-        <Link href="/events">
-          <a className="btn-secondary">View All Projects</a>
-        </Link>
-      )}
-    </Layout>
+        {events.length > 0 && (
+          <Link href="/events">
+            <a className="btn-secondary">View All Projects</a>
+          </Link>
+        )}
+      </Layout>
+    </motion.div>
   );
 }
 
