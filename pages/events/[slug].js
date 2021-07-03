@@ -1,14 +1,29 @@
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import Link from "next/link";
+import { useRouter } from "next/router";
 // import Image from "next/image";
 import Layout from "@/components/Layout";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Event.module.css";
 
 export default function EventPage({ evt }) {
-  const deleteEvent = (e) => {
-    console.log("Delete");
+  const router = useRouter();
+
+  const deleteEvent = async (e) => {
+    if (confirm("Are you sure?")) {
+      const res = await fetch(`${API_URL}/events/${evt.id}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.message);
+      } else {
+        router.push("/events");
+      }
+    }
   };
 
   const easing = [0.6, -0.05, 0.01, 0.99];
@@ -54,6 +69,7 @@ export default function EventPage({ evt }) {
             {evt.title} at {new Date(evt.endDate).toLocaleDateString("en-US")}
           </span>
           <h1>{evt.name}</h1>
+          <ToastContainer />
           {evt.image && (
             <div className={styles.image}>
               <motion.img
@@ -61,8 +77,8 @@ export default function EventPage({ evt }) {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
                 src={evt.image.url}
-                width={960}
-                height={600}
+                width="100%"
+                height={400}
                 alt={evt.name}
               ></motion.img>
               {/* <Image
@@ -73,18 +89,18 @@ export default function EventPage({ evt }) {
               /> */}
             </div>
           )}
-          <motion.h3 variants={fadeInUp}>WebApp Title: </motion.h3>
+          <h3>WebApp Title: </h3>
           <motion.p variants={fadeInUp}>{evt.title}</motion.p>
           <h3>Job Title: </h3>
-          <p>{evt.jobTitle}</p>
+          <motion.p variants={fadeInUp}>{evt.jobTitle}</motion.p>
           <h3>Main Technologies:</h3>
-          <p>{evt.mainTechnologies}</p>
+          <motion.p variants={fadeInUp}>{evt.mainTechnologies}</motion.p>
           <h3>Database:</h3>
-          <p>{evt.database}</p>
+          <motion.p variants={fadeInUp}>{evt.database}</motion.p>
           <h3>Difficulty Level: </h3>
-          <p>{evt.difficultyLevel}</p>
+          <motion.p variants={fadeInUp}>{evt.difficultyLevel}</motion.p>
           <h3>Description: </h3>
-          <p>{evt.description}</p>
+          <motion.p variants={fadeInUp}>{evt.description}</motion.p>
           <h4>
             Github Source Code:{" "}
             <Link href={evt.githubSourceCode}>{evt.githubSourceCode}</Link>

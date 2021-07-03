@@ -9,7 +9,7 @@ export default function HomePage({ events }) {
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
         <h1>Upcoming Projects</h1>
-        {events.length === 0 && <h3>No projects to show...</h3>}
+        {events.length === 0 && <h3>No upcoming projects to show...</h3>}
 
         {events.map((evt) => (
           <EventItem key={evt.id} evt={evt} />

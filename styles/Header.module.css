@@ -12,7 +12,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
   transition: all 0.3s ease-in-out;
 }
 
@@ -38,6 +37,7 @@
 .logo {
   color: rgb(102, 121, 177);
   font-size: 20px;
+  padding-top: 20px;
   text-transform: uppercase;
 }
 
@@ -63,5 +63,6 @@
 
   .logo {
     margin: 20px 0;
+    padding-left: 10px;
   }
 }
