@@ -55,7 +55,7 @@ export default function EventPage({ evt }) {
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
         <div className={styles.event}>
-          <div className={styles.controls}>
+          {/* <div className={styles.controls}>
             <Link href={`/events/edit/${evt.id}`}>
               <a>
                 <FaPencilAlt /> Edit Project
@@ -64,11 +64,9 @@ export default function EventPage({ evt }) {
             <a href="#" className={styles.delete} onClick={deleteEvent}>
               <FaTimes /> Delete Project
             </a>
-          </div>
-          <span>
-            {evt.title} at {new Date(evt.endDate).toLocaleDateString("en-US")}
-          </span>
-          <h1>{evt.name}</h1>
+          </div> */}
+          <span>{new Date(evt.endDate).toLocaleDateString("en-US")}</span>
+          <h1>{evt.title}</h1>
           <ToastContainer />
           {evt.image && (
             <div className={styles.image}>
@@ -90,17 +88,25 @@ export default function EventPage({ evt }) {
             </div>
           )}
           <h3>WebApp Title: </h3>
-          <motion.p variants={fadeInUp}>{evt.title}</motion.p>
+          <motion.p variants={fadeInUp}>
+            {evt.title ? evt.title : <p>None</p>}
+          </motion.p>
           <h3>Job Title: </h3>
-          <motion.p variants={fadeInUp}>{evt.jobTitle}</motion.p>
+          <motion.p variants={fadeInUp}>
+            {evt.jobTitle ? evt.jobTitle : <p>None</p>}
+          </motion.p>
           <h3>Main Technologies:</h3>
-          <motion.p variants={fadeInUp}>{evt.mainTechnologies}</motion.p>
-          <h3>Database:</h3>
-          <motion.p variants={fadeInUp}>{evt.database}</motion.p>
+          <motion.p variants={fadeInUp}>
+            {evt.mainTechnologies ? evt.mainTechnologies : <p>None</p>}
+          </motion.p>
           <h3>Difficulty Level: </h3>
-          <motion.p variants={fadeInUp}>{evt.difficultyLevel}</motion.p>
+          <motion.p variants={fadeInUp}>
+            {evt.difficultyLevel ? evt.difficultyLevel : <p>None</p>}
+          </motion.p>
           <h3>Description: </h3>
-          <motion.p variants={fadeInUp}>{evt.description}</motion.p>
+          <motion.p variants={fadeInUp}>
+            {evt.description ? evt.description : <p>None</p>}
+          </motion.p>
           <h4>
             Github Source Code:{" "}
             <Link href={evt.githubSourceCode}>{evt.githubSourceCode}</Link>
