@@ -12,20 +12,6 @@ import styles from "@/styles/Event.module.css";
 export default function EventPage({ evt }) {
   const router = useRouter();
 
-  const deleteEvent = async (e) => {
-    if (confirm("Are you sure?")) {
-      const res = await fetch(`${API_URL}/events/${evt.id}`, {
-        method: "DELETE",
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.message);
-      } else {
-        router.push("/events");
-      }
-    }
-  };
-
   const easing = [0.6, -0.05, 0.01, 0.99];
 
   const fadeInUp = {

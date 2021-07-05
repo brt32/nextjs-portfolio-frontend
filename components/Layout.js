@@ -25,9 +25,11 @@ const Layout = ({ title, keywords, description, children }) => {
 };
 
 Layout.defaultProps = {
-  title: "DJ Events | Find the hottest parties",
-  description: "Find the latest DJ and other musical events",
-  keywords: "music, dj, edm, events",
+  title: "Welcome to my Portfolio WebApp!",
+  description:
+    "Find my latest and upcoming WebApp projects based on the newest technologies!",
+  keywords:
+    "portfolio, webapp, reactjs, nextjs, javascript, nodejs, mongodb, python, django, sql, api",
 };
 
 export default Layout;

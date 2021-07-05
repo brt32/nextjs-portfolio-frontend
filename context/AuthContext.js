@@ -10,12 +10,10 @@ export const AuthProvider = ({ children }) => {
 
   const router = useRouter();
 
-  useEffect(() => checkUserLoggedIn(), []);
+  // useEffect(() => checkUserLoggedIn(), []);
 
   // Register user
-  const register = async (user) => {
-    console.log(user);
-  };
+  const register = async (user) => {};
 
   // Login user
   const login = async ({ email: identifier, password }) => {

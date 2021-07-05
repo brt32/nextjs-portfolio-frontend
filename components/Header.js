@@ -6,11 +6,12 @@ import {
   FaTasks,
 } from "react-icons/fa";
 import { useContext } from "react";
+import { Button } from "react-bootstrap";
 import Link from "next/link";
 import Search from "./Search";
 import AuthContext from "@/context/AuthContext";
 import styles from "@/styles/Header.module.css";
-import shake from "@/styles/Shake.module.css";
+// import shake from "@/styles/Shake.module.css";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);

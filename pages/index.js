@@ -5,6 +5,10 @@ import { motion } from "framer-motion";
 import { API_URL } from "@/config/index";
 
 export default function HomePage({ events }) {
+  {
+    events.map((evt) => evt.isUpcoming === true);
+  }
+
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
@@ -12,7 +16,7 @@ export default function HomePage({ events }) {
         {events.length === 0 && <h3>No upcoming projects to show...</h3>}
 
         {events.map((evt) => (
-          <EventItem key={evt.id} evt={evt} />
+          <EventItem key={evt.id} evt={evt} isUpcoming={evt.isUpcoming} />
         ))}
 
         {events.length > 0 && (
@@ -26,7 +30,7 @@ export default function HomePage({ events }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/events?_sort=startDate:ASC&_limit=3`);
+  const res = await fetch(`${API_URL}/events?isUpcoming=true&_limit=3`);
   const events = await res.json();
 
   return {
