@@ -16,6 +16,10 @@
   flex: 2;
 }
 
+.title {
+  text-decoration: none;
+}
+
 @media (max-width: 600px) {
   .event {
     flex-direction: column;

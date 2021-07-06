@@ -1,4 +1,4 @@
-import EventLayout from "@/components/EventLayout";
+import Layout from "@/components/Layout";
 import EventItem from "@/components/EventItem";
 import Pagination from "@/components/Pagination";
 import { motion } from "framer-motion";
@@ -7,7 +7,7 @@ import { API_URL, PER_PAGE } from "@/config/index";
 export default function EventsPage({ events, page, total }) {
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
-      <EventLayout>
+      <Layout>
         <h1>My All Projects</h1>
         {events.length === 0 && <h3>No projects to show...</h3>}
 
@@ -15,7 +15,7 @@ export default function EventsPage({ events, page, total }) {
           <EventItem key={evt.id} evt={evt} />
         ))}
         <Pagination page={page} total={total} />
-      </EventLayout>
+      </Layout>
     </motion.div>
   );
 }

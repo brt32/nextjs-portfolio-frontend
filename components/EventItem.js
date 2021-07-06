@@ -63,7 +63,7 @@ export default function EventItem({ evt }) {
             since {new Date(evt.startDate).toLocaleDateString("en-US")}
           </span>
           <h3>
-            <Link href={`/events/${evt.slug}`}>
+            <Link href={`/events/${evt.slug}`} className={styles.title}>
               <a>Titled as: {evt.title}</a>
             </Link>
           </h3>
@@ -71,7 +71,7 @@ export default function EventItem({ evt }) {
         </motion.div>
         <div className={styles.link}>
           <Link href={`/events/${evt.slug}`}>
-            <a className="btn btn-secondary btn-lg">Details</a>
+            <a className="btn btn-dark btn-lg">Details</a>
           </Link>
         </div>
       </motion.div>

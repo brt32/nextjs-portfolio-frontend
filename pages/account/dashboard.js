@@ -32,7 +32,6 @@ export default function DashboardPage({ events, token }) {
     <Layout title="User Dashboard">
       <div className={styles.dash}>
         <h1>Dashboard</h1>
-        <h3>My Projects</h3>
         <Link href="/events/add">
           <a className={styles.addBtn}>Add New Project</a>
         </Link>

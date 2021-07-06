@@ -5,7 +5,6 @@ import matter from "gray-matter";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import Post from "@/components/Post";
-import EventItem from "@/components/EventItem";
 import Pagination from "@/components/Pagination";
 import { API_URL, PER_PAGE } from "@/config/index";
 import { sortByDate } from "../../utils/index";
@@ -13,7 +12,9 @@ import { sortByDate } from "../../utils/index";
 export default function BlogPage({ posts }) {
   return (
     <Layout>
-      <h1> Latest Posts </h1>
+      <h1 className="blogTitle">My Next Static Blog</h1>
+      <h2> Latest Posts </h2>
+
       {posts.map((post, index) => (
         <Post key={index} post={post} />
       ))}
