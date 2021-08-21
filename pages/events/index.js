@@ -3,13 +3,16 @@ import EventItem from "@/components/EventItem";
 import Pagination from "@/components/Pagination";
 import { motion } from "framer-motion";
 import { API_URL, PER_PAGE } from "@/config/index";
+import styles from "@/styles/Index.module.css";
 
 export default function EventsPage({ events, page, total }) {
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
-        <h1>My All Projects</h1>
-        {events.length === 0 && <h3>No projects to show...</h3>}
+        <h1 className={styles.title}>My All Projects</h1>
+        {events.length === 0 && (
+          <h3 className="event">No projects to show...</h3>
+        )}
 
         {events.map((evt) => (
           <EventItem key={evt.id} evt={evt} />

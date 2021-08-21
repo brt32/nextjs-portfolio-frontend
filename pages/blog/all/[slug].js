@@ -5,32 +5,29 @@ import matter from "gray-matter";
 import marked from "marked";
 import Link from "next/link";
 import Layout from "@/components/Layout";
-import CategoryLabel from "@/components/CategoryLabel";
+import Image from "next/image";
 
 export default function PostPage({
-  frontmatter: { title, category, date, cover_image, author, author_image },
-  content,
+  frontmatter: { title, date, cover_image },
   slug,
+  content,
 }) {
   return (
-    <Layout title={title}>
-      <Link href="/blog">Go Back</Link>
-      <div>
-        <div>
-          <h1>{title}</h1>
-          <CategoryLabel>{category}</CategoryLabel>
-        </div>
-        <img src={cover_image} alt="" width="100%" />
-        <div>
-          <div>
-            <img src={author_image} alt="" />
-            <h4>{author}</h4>
+    <>
+      <Layout title={title}>
+        <Link href="/blog">
+          <a className="btn btn-secondary">Go Back</a>
+        </Link>
+        <div className="card card-page">
+          <h1 className="post-title">{title}</h1>
+          <div className="post-date">Posted on {date}</div>
+          <Image src={cover_image} alt="" width="400%" height="200%" />
+          <div className="post-body">
+            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
           </div>
-          <div>{date}</div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 }
 
@@ -42,8 +39,6 @@ export async function getStaticPaths() {
       slug: filename.replace(".md", ""),
     },
   }));
-
-  console.log(paths);
 
   return {
     paths,
@@ -62,8 +57,8 @@ export async function getStaticProps({ params: { slug } }) {
   return {
     props: {
       frontmatter,
-      content,
       slug,
+      content,
     },
   };
 }

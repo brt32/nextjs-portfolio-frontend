@@ -1,0 +1,102 @@
+.followers {
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px #ddd solid;
+  background-color: rgb(96, 96, 219);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.following {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px #ddd solid;
+  background-color: #55d2e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.repos {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px #ddd solid;
+  background-color: #ef972b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gists {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px #ddd solid;
+  background-color: #e04156;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px #ddd solid;
+  background-color: #d3d3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px #ddd solid;
+  background-color: #c27cff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  padding: 20px;
+  border-radius: 10px;
+  border: 0px #ddd solid;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+}

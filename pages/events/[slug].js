@@ -40,6 +40,12 @@ export default function EventPage({ evt }) {
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
+        <div className={styles.backBtn}>
+          <Link href="/events">
+            <a className="btn btn-secondary my-1">Go Back</a>
+          </Link>
+        </div>
+
         <div className={styles.event}>
           {/* <div className={styles.controls}>
             <Link href={`/events/edit/${evt.id}`}>
@@ -73,26 +79,34 @@ export default function EventPage({ evt }) {
               /> */}
             </div>
           )}
-          <h3>WebApp Title: </h3>
-          <motion.p variants={fadeInUp}>
+          <h3>Application Title: </h3>
+          <motion.div variants={fadeInUp}>
             {evt.title ? evt.title : <p>None</p>}
-          </motion.p>
+          </motion.div>
           <h3>Job Title: </h3>
-          <motion.p variants={fadeInUp}>
+          <motion.div variants={fadeInUp}>
             {evt.jobTitle ? evt.jobTitle : <p>None</p>}
-          </motion.p>
+          </motion.div>
           <h3>Main Technologies:</h3>
-          <motion.p variants={fadeInUp}>
+          <motion.div variants={fadeInUp}>
             {evt.mainTechnologies ? evt.mainTechnologies : <p>None</p>}
-          </motion.p>
+          </motion.div>
+          <h3>Application Type:</h3>
+          <motion.div variants={fadeInUp}>
+            {evt.applicationType ? evt.applicationType : <p>None</p>}
+          </motion.div>
+          <h3>Database:</h3>
+          <motion.div variants={fadeInUp}>
+            {evt.database ? evt.database : <p>None</p>}
+          </motion.div>
           <h3>Difficulty Level: </h3>
-          <motion.p variants={fadeInUp}>
+          <motion.div variants={fadeInUp}>
             {evt.difficultyLevel ? evt.difficultyLevel : <p>None</p>}
-          </motion.p>
+          </motion.div>
           <h3>Description: </h3>
-          <motion.p variants={fadeInUp}>
+          <motion.div variants={fadeInUp}>
             {evt.description ? evt.description : <p>None</p>}
-          </motion.p>
+          </motion.div>
           <h4>
             Github Source Code:{" "}
             <Link href={evt.githubSourceCode}>{evt.githubSourceCode}</Link>
@@ -104,9 +118,9 @@ export default function EventPage({ evt }) {
           Project Started at{" "}
           {new Date(evt.startDate).toLocaleDateString("en-US")} and finished at{" "}
           {new Date(evt.endDate).toLocaleDateString("en-US")}
-          <Link href="/events">
+          {/* <Link href="/events">
             <a className={styles.back}>{"<"} Go Back</a>
-          </Link>
+          </Link> */}
         </div>
       </Layout>
     </motion.div>

@@ -64,7 +64,7 @@ export default function EventItem({ evt }) {
           </span>
           <h3>
             <Link href={`/events/${evt.slug}`} className={styles.title}>
-              <a>Titled as: {evt.title}</a>
+              <a className={styles.title}> {evt.title}</a>
             </Link>
           </h3>
           <h5>Created by: {evt.user.username}</h5>

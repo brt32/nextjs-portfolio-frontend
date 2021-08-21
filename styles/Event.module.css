@@ -1,6 +1,6 @@
 .event {
   position: relative;
-  padding-top: 120px;
+  padding-top: 20px;
 }
 
 .event h3 {
@@ -29,4 +29,9 @@
 .back {
   display: block;
   margin-top: 40px;
+}
+
+.backBtn {
+  display: flex;
+  margin: 10px 10px;
 }

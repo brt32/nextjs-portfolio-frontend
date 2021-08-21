@@ -14,12 +14,14 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Link from "next/link";
 import AuthContext from "@/context/AuthContext";
 import Search from "./Search";
-import NavHelp from "@/styles/NavHelp.module.css";
+import styles from "@/styles/NavHelp.module.css";
 
 export default function MyNavbar() {
+  const LINKED_IN_URL =
+    "https://www.linkedin.com/in/bart%C5%82omiej-proczkowski/";
   const { user, logout } = useContext(AuthContext);
   return (
-    <div className={NavHelp.nav}>
+    <div className={styles.nav}>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
         <Link href="/" passHref>
           <Navbar.Brand>brt32-Portfolio</Navbar.Brand>
@@ -43,9 +45,10 @@ export default function MyNavbar() {
                   <FaGithub /> Github
                 </NavDropdown.Item>
               </Link>
-              <Link href="/linkedin" passHref>
+              <Link href={LINKED_IN_URL} target="_blank" passHref>
                 <NavDropdown.Item>
-                  <FaLinkedin /> LinkedIn
+                  <FaLinkedin />
+                  LinkedIn
                 </NavDropdown.Item>
               </Link>
               <NavDropdown.Divider />

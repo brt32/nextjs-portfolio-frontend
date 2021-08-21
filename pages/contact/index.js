@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function About() {
   return (
-    <Layout title="About DJ Events">
+    <Layout title="About my Projects">
       <ContactForm />
     </Layout>
   );

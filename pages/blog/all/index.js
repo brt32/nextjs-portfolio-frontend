@@ -1,19 +1,14 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-
-import Link from "next/link";
-import Layout from "@/components/Layout";
-import Post from "@/components/Post";
-import EventItem from "@/components/EventItem";
-import Pagination from "@/components/Pagination";
-import { API_URL, PER_PAGE } from "@/config/index";
+import Layout from "@components/Layout";
+import Post from "@components/Post";
 import { sortByDate } from "../../../utils/index";
 
 export default function AllBlogPage({ posts }) {
   return (
     <Layout>
-      <h1> All Posts </h1>
+      <h1 className="blogTitle"> All Posts </h1>
       {posts.map((post, index) => (
         <Post key={index} post={post} />
       ))}
@@ -21,7 +16,7 @@ export default function AllBlogPage({ posts }) {
   );
 }
 
-export async function getStaticProps({}) {
+export async function getServerSideProps({}) {
   const files = fs.readdirSync(path.join("posts"));
 
   const posts = files.map((filename) => {

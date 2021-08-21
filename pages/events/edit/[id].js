@@ -18,6 +18,8 @@ export default function EditEventPage({ evt, token }) {
     title: evt.title,
     jobTitle: evt.jobTitle,
     mainTechnologies: evt.mainTechnologies,
+    applicationType: evt.applicationType,
+    database: evt.database,
     difficultyLevel: evt.difficultyLevel,
     description: evt.description,
     herokuDemoWebsite: evt.herokuDemoWebsite,
@@ -36,7 +38,7 @@ export default function EditEventPage({ evt, token }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(values);
+
     const hasEmptyFields = Object.values(values).some(
       (element) => element === ""
     );
@@ -113,6 +115,28 @@ export default function EditEventPage({ evt, token }) {
               onChange={handleInputChange}
             />
           </div>
+
+          <div>
+            <label htmlFor="applicationType">Application Type </label>
+            <input
+              type="text"
+              id="applicationType"
+              name="applicationType"
+              value={values.applicationType}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="database">Database </label>
+            <input
+              type="text"
+              id="database"
+              name="database"
+              value={values.database}
+              onChange={handleInputChange}
+            />
+          </div>
+
           <div>
             <label htmlFor="difficultyLevel">Difficulty Level </label>
             <input
@@ -192,7 +216,11 @@ export default function EditEventPage({ evt, token }) {
       </div>
 
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <ImageUpload evtId={evt.id} imageUploaded={imageUploaded} token={token} />
+        <ImageUpload
+          evtId={evt.id}
+          imageUploaded={imageUploaded}
+          token={token}
+        />
       </Modal>
     </Layout>
   );

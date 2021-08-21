@@ -5,7 +5,7 @@ import styles from "@/styles/DashboardEvent.module.css";
 export default function DashboardEvent({ evt, handleDelete }) {
   return (
     <div className={styles.event}>
-      <h4>
+      <h4 className={styles.h4}>
         <Link href={`/events/${evt.slug}`}>
           <a>{evt.title}</a>
         </Link>

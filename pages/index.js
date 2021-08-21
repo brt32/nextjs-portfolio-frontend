@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { sortByDate } from "../utils/index";
-
+import styles from "@/styles/Index.module.css";
 import Layout from "@/components/Layout";
 import Post from "@/components/Post";
 import EventItem from "@/components/EventItem";
@@ -12,34 +12,39 @@ import { API_URL } from "@/config/index";
 
 export default function HomePage({ events, posts }) {
   {
-    events.map((evt) => evt.isUpcoming === true);
+    events.length > 0 && events.map((evt) => evt.isUpcoming === true);
   }
 
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
-        <h1>Upcoming Projects</h1>
+        <h1 className={styles.title}>Upcoming Projects</h1>
         {events.length === 0 && <h3>No upcoming projects to show...</h3>}
 
-        {events.map((evt) => (
-          <EventItem key={evt.id} evt={evt} isUpcoming={evt.isUpcoming} />
-        ))}
+        {events.length > 0 &&
+          events.map((evt) => (
+            <EventItem key={evt.id} evt={evt} isUpcoming={evt.isUpcoming} />
+          ))}
 
         {events.length > 0 && (
-          <Link href="/events">
-            <a className="btn-secondary">View All Projects</a>
-          </Link>
+          <div className={styles.btn}>
+            <Link href="/events">
+              <a className="btn-secondary">View All Projects</a>
+            </Link>
+          </div>
         )}
 
-        <h1>Latest Blog Posts</h1>
+        <h1 className="blog">Latest Blog Posts</h1>
         {posts.length === 0 && <h3>No blog posts here...</h3>}
         {posts.map((post, index) => (
           <Post key={index} post={post} />
         ))}
         {events.length > 0 && (
-          <Link href="/blog/all">
-            <a className="btn-secondary">View All Blog Posts</a>
-          </Link>
+          <div className={styles.btn}>
+            <Link href="/blog">
+              <a className="btn-secondary">View All Blog Posts</a>
+            </Link>
+          </div>
         )}
       </Layout>
     </motion.div>

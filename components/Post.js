@@ -15,28 +15,34 @@ export default function Post({ post }) {
               alt=""
               height={220}
               width={420}
+              className={styles.image}
             />
             <div className={styles.category}>
               <span className={styles.date}>{post.frontmatter.date}</span>
-              <CategoryLabel>{post.frontmatter.category}</CategoryLabel>
             </div>
             <div className={styles.title}>
               <Link href={`/blog/all/${post.slug}`}>
-                <a>{post.frontmatter.title}</a>
+                <a className={styles.title}>{post.frontmatter.title}</a>
               </Link>
+            </div>
+            <div className={styles.description}>
               <p>{post.frontmatter.excerpt}</p>
             </div>
-            <div className="flex justify-between items-center mt-6">
+
+            <div className={styles.title}>
               <Link href={`/blog/all/${post.slug}`}>
-                <a>Read More</a>
+                <a className={styles.title}>Read More</a>
               </Link>
-              <div className="flex items-center">
-                <img src={post.frontmatter.author_image} alt="" />
-                <h3 className="text-gray-700 font-bold">
-                  {post.frontmatter.author}
-                </h3>
-              </div>
             </div>
+            <div className={styles.author_image}>
+              <img
+                className={styles.author_image}
+                src={post.frontmatter.author_image}
+                alt=""
+                width="15%"
+              />
+            </div>
+            <h3 className={styles.author}>{post.frontmatter.author}</h3>
           </div>
         </div>
       </div>

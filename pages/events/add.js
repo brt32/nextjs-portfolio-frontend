@@ -13,6 +13,8 @@ export default function AddEventPage({ token }) {
     title: "",
     jobTitle: "",
     mainTechnologies: "",
+    applicationType: "",
+    database: "",
     difficultyLevel: "",
     description: "",
     herokuDemoWebsite: "",
@@ -95,6 +97,28 @@ export default function AddEventPage({ token }) {
               onChange={handleInputChange}
             />
           </div>
+
+          <div>
+            <label htmlFor="applicationType">Application Type </label>
+            <input
+              type="text"
+              id="applicationType"
+              name="applicationType"
+              value={values.applicationType}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="database">Database </label>
+            <input
+              type="text"
+              id="database"
+              name="database"
+              value={values.database}
+              onChange={handleInputChange}
+            />
+          </div>
+
           <div>
             <label htmlFor="difficultyLevel">Difficulty Level </label>
             <input

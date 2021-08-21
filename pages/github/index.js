@@ -38,7 +38,7 @@ export default function GithubPage({ gitUser, gitRepos }) {
             style={{ width: "150px" }}
           />
           <h1>{name}</h1>
-          <p>Location: {location}</p>
+          <p className={styles.location}>Location: {location}</p>
         </div>
         <div>
           {bio && (
@@ -50,38 +50,40 @@ export default function GithubPage({ gitUser, gitRepos }) {
           <a href={html_url} className="btn btn-dark my-1">
             Visit Github Profile
           </a>
-          <ul>
-            <li>
-              {login && (
-                <>
-                  <strong>Username: </strong> {login}
-                </>
-              )}
-            </li>
+          <div className={styles.info}>
+            <ul>
+              <li>
+                {login && (
+                  <>
+                    <strong>Username: </strong> {login}
+                  </>
+                )}
+              </li>
 
-            <li>
-              {company && (
-                <>
-                  <strong>Company: </strong> {company}
-                </>
-              )}
-            </li>
+              <li>
+                {company && (
+                  <>
+                    <strong>Company: </strong> {company}
+                  </>
+                )}
+              </li>
 
-            <li>
-              {blog && (
-                <>
-                  <strong>Website: </strong> {blog}
-                </>
-              )}
-            </li>
-          </ul>
+              <li>
+                {blog && (
+                  <>
+                    <strong>Website: </strong> {blog}
+                  </>
+                )}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="card text-center">
-        <div className="badge-primary">Followers: {followers}</div>
-        <div className="badge-success">Following: {following}</div>
-        <div className="badge-secondary">Public Repos: {public_repos}</div>
-        <div className="badge-dark">Public Gists: {public_gists}</div>
+        <div className={styles.followers}>Followers: {followers}</div>
+        <div className={styles.following}>Following: {following}</div>
+        <div className={styles.repos}>Public Repos: {public_repos}</div>
+        <div className={styles.gists}>Public Gists: {public_gists}</div>
       </div>
     </Layout>
   );
