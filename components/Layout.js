@@ -10,19 +10,21 @@ const Layout = ({ title, keywords, description, children }) => {
   const router = useRouter();
 
   return (
-    <div>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={keywords} />
-      </Head>
+    <>
+      <div>
+        <Head>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <meta name="keywords" content={keywords} />
+        </Head>
 
-      <MyNavbar />
+        <MyNavbar />
 
-      {router.pathname === "/" && <Showcase />}
-      <div className={styles.container}>{children}</div>
+        {router.pathname === "/" && <Showcase />}
+        <div className={styles.container}>{children}</div>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
