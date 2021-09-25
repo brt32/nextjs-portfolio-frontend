@@ -5,6 +5,7 @@ import { sortByDate } from "../utils/index";
 import styles from "@/styles/Index.module.css";
 import Layout from "@/components/Layout";
 import Post from "@/components/Post";
+import Carousel from "../components/CarouselComponent";
 import EventItem from "@/components/EventItem";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -29,6 +30,9 @@ export default function HomePage({ events, posts }) {
             </Link>
           </div>
         )}
+
+        <h1 className={styles.title}>Random pictures</h1>
+        <Carousel />
 
         {/* <h1 className={styles.latest}>Latest Blog Posts</h1>
         {posts.length === 0 && <h3>No blog posts here...</h3>}
