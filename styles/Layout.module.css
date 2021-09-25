@@ -8,4 +8,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
+  font-style: italic;
+  color: rgb(48, 45, 45);
+}
+
+.footer a {
+  text-decoration: none;
+  color: rgb(48, 45, 45);
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color: rgb(85, 77, 77);
 }
