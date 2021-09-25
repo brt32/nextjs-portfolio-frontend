@@ -34,7 +34,7 @@ export default function HomePage({ events, posts }) {
           </div>
         )}
 
-        <h1 className="blog">Latest Blog Posts</h1>
+        <h1 className={styles.latest}>Latest Blog Posts</h1>
         {posts.length === 0 && <h3>No blog posts here...</h3>}
         {posts.map((post, index) => (
           <Post key={index} post={post} />

@@ -1,8 +1,17 @@
-.footer {
-  margin: 100px 0 40px;
+.about {
+  margin: 10px 10px;
   text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: rgb(48, 45, 45);
 }
 
-.footer p {
-  margin: 5px 0;
+.about a {
+  text-decoration: none;
+  color: rgb(48, 45, 45);
+}
+
+.about a:hover {
+  text-decoration: none;
+  color: rgb(85, 77, 77);
 }

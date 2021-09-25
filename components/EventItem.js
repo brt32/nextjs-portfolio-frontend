@@ -31,7 +31,7 @@ export default function EventItem({ evt }) {
 
   return (
     <motion.div variants={stagger}>
-      <motion.div variants={fadeInUp} className={styles.event}>
+      <motion.div className={styles.event}>
         <motion.div className={styles.img}>
           <motion.img
             initial={{ x: 60, opacity: 0 }}
@@ -58,16 +58,18 @@ export default function EventItem({ evt }) {
           /> */}
         </motion.div>
         <motion.div variants={fadeInUp} className={styles.info}>
-          <span>
+          <span className={styles.datetitle}>
             Finished at {new Date(evt.endDate).toLocaleDateString("en-US")}{" "}
             since {new Date(evt.startDate).toLocaleDateString("en-US")}
           </span>
-          <h3>
-            <Link href={`/events/${evt.slug}`} className={styles.title}>
+          <h3 className={styles.title}>
+            <Link href={`/events/${evt.slug}`}>
               <a className={styles.title}> {evt.title}</a>
             </Link>
           </h3>
-          <h5>Created by: {evt.user.username}</h5>
+          <h5 className={styles.created}>
+            Created by: {evt.user ? evt.user.username : <span>None</span>}
+          </h5>
         </motion.div>
         <div className={styles.link}>
           <Link href={`/events/${evt.slug}`}>

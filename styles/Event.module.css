@@ -1,14 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
 .event {
   position: relative;
   padding-top: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .event h3 {
   font-size: 25px;
+  font-weight: bold;
+}
+
+.event h4 {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .event p {
-  margin: 10px 0;
+  margin: 0px 0;
+}
+
+.event a {
+  margin: 0px 0;
+  text-decoration: none;
+  color: rgb(124, 102, 102);
+}
+
+.event a:hover {
+  color: rgb(187, 172, 172);
 }
 
 .image {
@@ -34,4 +53,15 @@
 .backBtn {
   display: flex;
   margin: 10px 10px;
+}
+
+.dates {
+  font-style: italic;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.urls {
+  margin-top: 20px;
 }

@@ -8,6 +8,10 @@
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+.event h3 {
+  text-decoration: none;
+}
+
 .img {
   flex: 1;
   margin: 10px;
@@ -17,9 +21,25 @@
   flex: 2;
 }
 
-.title {
+.title a {
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-decoration: none;
-  color: cornflowerblue;
+  color: rgb(53, 67, 95);
+}
+
+.title a:hover {
+  color: rgb(67, 111, 190);
+}
+
+.datetitle {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.created {
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 @media (max-width: 600px) {

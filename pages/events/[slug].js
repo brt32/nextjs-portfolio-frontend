@@ -81,43 +81,48 @@ export default function EventPage({ evt }) {
           )}
           <h3>Application Title: </h3>
           <motion.div variants={fadeInUp}>
-            {evt.title ? evt.title : <p>None</p>}
+            {evt.title ? <p>{evt.title}</p> : <p>None</p>}
           </motion.div>
           <h3>Job Title: </h3>
           <motion.div variants={fadeInUp}>
-            {evt.jobTitle ? evt.jobTitle : <p>None</p>}
+            {evt.jobTitle ? <p>{evt.jobTitle}</p> : <p>None</p>}
           </motion.div>
           <h3>Main Technologies:</h3>
           <motion.div variants={fadeInUp}>
-            {evt.mainTechnologies ? evt.mainTechnologies : <p>None</p>}
+            {evt.mainTechnologies ? <p>{evt.mainTechnologies}</p> : <p>None</p>}
           </motion.div>
           <h3>Application Type:</h3>
           <motion.div variants={fadeInUp}>
-            {evt.applicationType ? evt.applicationType : <p>None</p>}
+            {evt.applicationType ? <p>{evt.applicationType}</p> : <p>None</p>}
           </motion.div>
           <h3>Database:</h3>
           <motion.div variants={fadeInUp}>
-            {evt.database ? evt.database : <p>None</p>}
+            {evt.database ? <p>{evt.database}</p> : <p>None</p>}
           </motion.div>
           <h3>Difficulty Level: </h3>
           <motion.div variants={fadeInUp}>
-            {evt.difficultyLevel ? evt.difficultyLevel : <p>None</p>}
+            {evt.difficultyLevel ? <p>{evt.difficultyLevel}</p> : <p>None</p>}
           </motion.div>
           <h3>Description: </h3>
           <motion.div variants={fadeInUp}>
-            {evt.description ? evt.description : <p>None</p>}
+            {evt.description ? <p>{evt.description}</p> : <p>None</p>}
           </motion.div>
-          <h4>
+          <h4 className={styles.urls}>
             Github Source Code:{" "}
             <Link href={evt.githubSourceCode}>{evt.githubSourceCode}</Link>
           </h4>
-          <h4>
-            Heroku Demo WebApp:{" "}
+          <h4 className={styles.urls}>
+            Link for Demo WebApp:{" "}
             <Link href={evt.herokuDemoWebsite}>{evt.herokuDemoWebsite}</Link>
           </h4>
-          Project Started at{" "}
-          {new Date(evt.startDate).toLocaleDateString("en-US")} and finished at{" "}
-          {new Date(evt.endDate).toLocaleDateString("en-US")}
+          <p className={styles.dates}>
+            Project Started at{" "}
+            <strong>
+              {new Date(evt.startDate).toLocaleDateString("en-US")}
+            </strong>{" "}
+            and finished at{" "}
+            <strong>{new Date(evt.endDate).toLocaleDateString("en-US")}</strong>
+          </p>
           {/* <Link href="/events">
             <a className={styles.back}>{"<"} Go Back</a>
           </Link> */}

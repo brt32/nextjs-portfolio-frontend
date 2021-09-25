@@ -80,7 +80,9 @@ export default function EditEventPage({ evt, token }) {
 
   return (
     <Layout title="Edit Event">
-      <Link href="/events">Go Back</Link>
+      <Link href="/account/dashboard">
+        <a className="btn btn-secondary">Go Back</a>
+      </Link>
       <h1>Edit Event</h1>
       <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>

@@ -3,13 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 import CategoryLabel from "./CategoryLabel";
 import styles from "@/styles/Post.module.css";
+import { motion } from "framer-motion";
 
 export default function Post({ post }) {
   return (
     <div className={styles.row}>
       <div className={styles.column}>
         <div className={styles.card}>
-          <div className={styles.image}>
+          <motion.div
+            className={styles.image}
+            initial={{ x: 160, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+          >
             <Image
               src={post.frontmatter.cover_image}
               alt=""
@@ -43,7 +48,7 @@ export default function Post({ post }) {
               />
             </div>
             <h3 className={styles.author}>{post.frontmatter.author}</h3>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

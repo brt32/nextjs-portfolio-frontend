@@ -35,7 +35,7 @@ export default function DashboardPage({ events, token }) {
         <Link href="/events/add">
           <a className={styles.addBtn}>Add New Project</a>
         </Link>
-        {events.map((evt) => (
+        {events.length > 0 && events.map((evt) => (
           <DashboardEvent key={evt.id} evt={evt} handleDelete={deleteEvent} />
         ))}
       </div>

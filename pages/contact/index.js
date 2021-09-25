@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
 
-export default function About() {
+export default function Contact() {
   return (
-    <Layout title="About my Projects">
+    <Layout title="Contact Me">
       <ContactForm />
     </Layout>
   );

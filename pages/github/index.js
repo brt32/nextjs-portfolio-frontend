@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Layout from "@/components/Layout";
+import Github from "@/components/Github";
 import styles from "@/styles/Github.module.css";
 import { USERNAME } from "@/config/index";
 
@@ -28,64 +29,21 @@ export default function GithubPage({ gitUser, gitRepos }) {
   } = gitUser;
 
   return (
-    <Layout>
-      <div className="card grid-2">
-        <div className="all-center">
-          <img
-            src={avatar_url}
-            className="round-img"
-            alt=""
-            style={{ width: "150px" }}
-          />
-          <h1>{name}</h1>
-          <p className={styles.location}>Location: {location}</p>
-        </div>
-        <div>
-          {bio && (
-            <>
-              <h3>Bio</h3>
-              <p>{bio}</p>
-            </>
-          )}
-          <a href={html_url} className="btn btn-dark my-1">
-            Visit Github Profile
-          </a>
-          <div className={styles.info}>
-            <ul>
-              <li>
-                {login && (
-                  <>
-                    <strong>Username: </strong> {login}
-                  </>
-                )}
-              </li>
-
-              <li>
-                {company && (
-                  <>
-                    <strong>Company: </strong> {company}
-                  </>
-                )}
-              </li>
-
-              <li>
-                {blog && (
-                  <>
-                    <strong>Website: </strong> {blog}
-                  </>
-                )}
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="card text-center">
-        <div className={styles.followers}>Followers: {followers}</div>
-        <div className={styles.following}>Following: {following}</div>
-        <div className={styles.repos}>Public Repos: {public_repos}</div>
-        <div className={styles.gists}>Public Gists: {public_gists}</div>
-      </div>
-    </Layout>
+    <>
+      <Github
+        name={name}
+        company={company}
+        location={location}
+        bio={bio}
+        blog={blog}
+        login={login}
+        html_url={html_url}
+        followers={followers}
+        following={following}
+        public_repos={public_repos}
+        public_gists={public_gists}
+      />
+    </>
   );
 }
 

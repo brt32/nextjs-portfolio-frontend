@@ -46,6 +46,7 @@ const Header = () => {
               Info
             </button>
             <div className={styles.dropdownContent}>
+              <Link href="/cv">CV</Link>
               <Link href="/github">Github</Link>
               <Link href="/linkedin">LinkedIn</Link>
               <Link href="/contact">Contact</Link>

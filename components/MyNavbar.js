@@ -8,6 +8,7 @@ import {
   FaTachometerAlt,
   FaBlog,
   FaTasks,
+  FaInfoCircle,
 } from "react-icons/fa";
 import { useContext } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
@@ -40,6 +41,11 @@ export default function MyNavbar() {
               </Nav.Link>
             </Link>
             <NavDropdown title="Info" id="collasible-nav-dropdown">
+              <Link href="/cv" passHref>
+                <NavDropdown.Item>
+                  <FaInfoCircle /> CV
+                </NavDropdown.Item>
+              </Link>
               <Link href="/github" passHref>
                 <NavDropdown.Item>
                   <FaGithub /> Github
