@@ -10,7 +10,6 @@ import { sortByDate } from "../../utils/index";
 export default function BlogPage({ posts }) {
   return (
     <Layout>
-      
       <h2 className={styles.title}>Static Markdown Blog</h2>
       {posts.map((post, index) => (
         <Post key={index} post={post} />
