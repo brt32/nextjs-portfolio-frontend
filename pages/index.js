@@ -48,7 +48,9 @@ export default function HomePage({ events, posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/events?isUpcoming=true&_limit=3`);
+  const res = await fetch(
+    `${API_URL}/events?isUpcoming=true&_sort=startDate:ASC&_limit=3`
+  );
   const events = await res.json();
 
   const files = fs.readdirSync(path.join("posts"));
