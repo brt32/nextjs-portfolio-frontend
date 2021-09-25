@@ -11,10 +11,8 @@ import { motion } from "framer-motion";
 import { API_URL } from "@/config/index";
 
 export default function HomePage({ events, posts }) {
-  {
-    events.length > 0 && events.map((evt) => evt.isUpcoming === true);
-  }
-
+  console.log(events);
+  console.log(posts);
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
@@ -22,9 +20,7 @@ export default function HomePage({ events, posts }) {
         {events.length === 0 && <h3>No upcoming projects to show...</h3>}
 
         {events.length > 0 &&
-          events.map((evt) => (
-            <EventItem key={evt.id} evt={evt} isUpcoming={evt.isUpcoming} />
-          ))}
+          events.map((evt) => <EventItem key={evt.id} evt={evt} />)}
 
         {events.length > 0 && (
           <div className={styles.btn}>
