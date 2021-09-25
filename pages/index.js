@@ -47,7 +47,7 @@ export default function HomePage({ events, posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(
     `${API_URL}/events?isUpcoming=true&_sort=startDate:ASC&_limit=3`
   );
@@ -73,6 +73,6 @@ export async function getStaticProps() {
 
   return {
     props: { events, posts: posts.sort(sortByDate).slice(0, 3) },
-    revalidate: 1,
+    // revalidate: 1,
   };
 }
