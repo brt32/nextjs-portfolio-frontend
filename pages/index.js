@@ -5,6 +5,7 @@ import { sortByDate } from "../utils/index";
 import styles from "@/styles/Index.module.css";
 import Layout from "@/components/Layout";
 import Post from "@/components/Post";
+import Footer from "@/components/Footer";
 import EventItem from "@/components/EventItem";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -47,6 +48,7 @@ export default function HomePage({ events, posts }) {
           </div>
         )}
       </Layout>
+      <Footer />
     </motion.div>
   );
 }

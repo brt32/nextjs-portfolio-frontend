@@ -23,7 +23,6 @@ const Layout = ({ title, keywords, description, children }) => {
         {router.pathname === "/" && <Showcase />}
         <div className={styles.container}>{children}</div>
       </div>
-      <Footer />
     </>
   );
 };
