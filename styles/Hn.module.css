@@ -1,0 +1,32 @@
+.maintitle {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  margin: 20px 0;
+  padding: 13px;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event h3 {
+  text-decoration: none;
+}
+
+.title a {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-decoration: none;
+  color: rgb(53, 67, 95);
+}
+
+.title a:hover {
+  color: rgb(67, 111, 190);
+}

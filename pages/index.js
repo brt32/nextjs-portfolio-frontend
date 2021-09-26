@@ -10,10 +10,9 @@ import EventItem from "@/components/EventItem";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { API_URL } from "@/config/index";
+import { HnContainer } from "@/components/HnContainer";
 
 export default function HomePage({ events, posts }) {
-  console.log(events);
-  console.log(posts);
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
@@ -31,7 +30,9 @@ export default function HomePage({ events, posts }) {
           </div>
         )}
 
-        <h1 className={styles.title}>Random pictures</h1>
+        <HnContainer />
+
+        <h1 className={styles.carotitle}>Random pictures</h1>
         <Carousel />
 
         {/* <h1 className={styles.latest}>Latest Blog Posts</h1>
