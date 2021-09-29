@@ -1,6 +1,7 @@
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import MarkdownView from "react-showdown";
 // import Image from "next/image";
 import Layout from "@/components/Layout";
 import { ToastContainer, toast } from "react-toastify";
@@ -105,7 +106,10 @@ export default function EventPage({ evt }) {
           </motion.div>
           <h3>Description: </h3>
           <motion.div variants={fadeInUp}>
-            {evt.description ? <p>{evt.description}</p> : <p>None</p>}
+            <MarkdownView
+              markdown={evt.description}
+              options={{ tables: true, emoji: true }}
+            />
           </motion.div>
           <h4 className={styles.urls}>
             Github Source Code:{" "}
