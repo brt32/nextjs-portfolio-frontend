@@ -134,11 +134,23 @@ export default function EventPage({ evt }) {
           </motion.div>
           <h4 className={styles.urls}>
             Github Source Code:{" "}
-            <Link href={evt.githubSourceCode}>{evt.githubSourceCode}</Link>
+            <a
+              href={evt.githubSourceCode}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {evt.githubSourceCode}
+            </a>
           </h4>
           <h4 className={styles.urls}>
             Application Demo:{" "}
-            <Link href={evt.herokuDemoWebsite}>{evt.herokuDemoWebsite}</Link>
+            <a
+              href={evt.herokuDemoWebsite}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {evt.herokuDemoWebsite}
+            </a>
           </h4>
           <p className={styles.dates}>
             Project Started at{" "}
