@@ -9,6 +9,9 @@ import { API_URL } from "@/config/index";
 import styles from "@/styles/Form.module.css";
 
 export default function AddEventPage({ token }) {
+  const [imagePreview, setImagePreview] = useState(
+    evt.image ? evt.image.formats.thumbnail.url : null
+  );
   const [values, setValues] = useState({
     title: "",
     jobTitle: "",

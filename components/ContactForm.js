@@ -64,6 +64,9 @@ const ContactForm = () => {
       <ToastContainer />
       <Form>
         <h1 className={styles.title}>Contact Me</h1>
+        <p className={styles.paragraph}>
+          If you want to ask me for something, send me an email...
+        </p>
         <Form.Group
           className="mb-3"
           name="name"
@@ -102,6 +105,7 @@ const ContactForm = () => {
           <Form.Label>Message</Form.Label>
           <Form.Control
             type="text"
+            placeholder="Write a message..."
             as="textarea"
             rows={4}
             onChange={(e) => {

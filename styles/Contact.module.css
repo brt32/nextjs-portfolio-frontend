@@ -6,3 +6,11 @@
   font-weight: bold;
   margin-bottom: 50px;
 }
+
+.paragraph {
+  font-family: Cambria;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}

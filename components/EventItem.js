@@ -59,8 +59,9 @@ export default function EventItem({ evt }) {
         </motion.div>
         <motion.div variants={fadeInUp} className={styles.info}>
           <span className={styles.datetitle}>
-            Finished at {new Date(evt.endDate).toLocaleDateString("en-US")}{" "}
-            since {new Date(evt.startDate).toLocaleDateString("en-US")}
+            Started at {new Date(evt.startDate).toLocaleDateString("pl-PL")}
+            {" and "}
+            Finished at {new Date(evt.endDate).toLocaleDateString("pl-PL")}
           </span>
           <h3 className={styles.title}>
             <Link href={`/events/${evt.slug}`}>

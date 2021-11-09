@@ -38,6 +38,12 @@ export default function EventPage({ evt }) {
     },
   };
 
+  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  const firstDate = new Date(evt.startDate);
+  const secondDate = new Date(evt.endDate);
+
+  const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
       <Layout>
@@ -61,7 +67,8 @@ export default function EventPage({ evt }) {
           <span>{new Date(evt.endDate).toLocaleDateString("en-US")}</span>
           <h1>{evt.title}</h1>
           <ToastContainer />
-          {evt.image && (
+
+          {evt.image ? (
             <div className={styles.image}>
               <motion.img
                 initial={{ x: 200, opacity: 0 }}
@@ -79,7 +86,21 @@ export default function EventPage({ evt }) {
                 alt={evt.name}
               /> */}
             </div>
+          ) : (
+            <motion.img
+              initial={{ x: 60, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              src={
+                evt.image
+                  ? evt.image.formats.thumbnail.url
+                  : "/images/event-default.png"
+              }
+              width={170}
+              height={500}
+              alt={evt.title}
+            ></motion.img>
           )}
+
           <h3>Application Title: </h3>
           <motion.div variants={fadeInUp}>
             {evt.title ? <p>{evt.title}</p> : <p>None</p>}
@@ -116,16 +137,19 @@ export default function EventPage({ evt }) {
             <Link href={evt.githubSourceCode}>{evt.githubSourceCode}</Link>
           </h4>
           <h4 className={styles.urls}>
-            Link for Demo WebApp:{" "}
+            Application Demo:{" "}
             <Link href={evt.herokuDemoWebsite}>{evt.herokuDemoWebsite}</Link>
           </h4>
           <p className={styles.dates}>
             Project Started at{" "}
             <strong>
-              {new Date(evt.startDate).toLocaleDateString("en-US")}
+              {new Date(evt.startDate).toLocaleDateString("pl-PL")}
             </strong>{" "}
             and finished at{" "}
-            <strong>{new Date(evt.endDate).toLocaleDateString("en-US")}</strong>
+            <strong>{new Date(evt.endDate).toLocaleDateString("pl-PL")}</strong>
+            <p>
+              <strong>Created in {diffDays} days.</strong>
+            </p>
           </p>
           {/* <Link href="/events">
             <a className={styles.back}>{"<"} Go Back</a>
